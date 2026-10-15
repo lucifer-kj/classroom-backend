@@ -1,3 +1,6 @@
+import AgentAPI from "apminsight";
+AgentAPI.config();
+
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
@@ -7,7 +10,7 @@ import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth.js";
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const frontendUrl = process.env.FRONTEND_URL;
 
